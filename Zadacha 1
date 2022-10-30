@@ -1,0 +1,20 @@
+//Написать рекурсивный алгоритм определения суммы цифр целого числа N
+#include "pt4.h"
+using namespace std;
+int DigitSum(int N)
+{
+    int res;
+    if (N == 0) return 0;
+    if (N < 10 and N>0) return abs(N);
+    if (N<0 and N>-10) return abs(N);
+    res = abs(N) / 10;
+    return abs(N) - res * 10 + DigitSum(res);
+}
+
+void Solve()
+{
+    Task("Reccur2");
+    int N;
+    pt >> N;
+    pt << DigitSum(N);
+}
