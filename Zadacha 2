@@ -1,0 +1,17 @@
+//Написать рекурсивную функцию для вычисления суммы: s=1*2+2*3+3*4+..., содержащей n первых членов (n,s-натуральные числа, n<20).
+#include "pt4.h"
+using namespace std;
+int sum(int n) {
+    int s = 0;
+    if (n == 0)return 0;
+    for (int i = 0; i <= n; i++) {
+        s += i * (i + 1);
+    }return s;
+}
+void Solve()
+{
+    Task("Reccur12");
+    int n;
+    pt >> n;
+    pt << sum(n);
+}
